@@ -1,0 +1,48 @@
+.DS_Store
+node_modules
+/dist
+# local env files
+.env.local
+.env.*.local
+#Ignore files build by Visual Studio
+*.obj
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.ilk
+*.lib
+*.sbr
+# Build results
+.vs/
+packages/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sw?
