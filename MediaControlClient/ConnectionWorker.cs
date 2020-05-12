@@ -31,7 +31,20 @@ namespace MediaControl
             {
                 await OnTuneVolume(true);
             });
-            _connectionMaintainer.Connection.On(MessagingConstants.ClientMessages.SET_VOLUME, OnPlayPause);
+            _connectionMaintainer.Connection.On<double>(MessagingConstants.ClientMessages.SET_VOLUME, (v) =>
+            {
+                _audioWorker.SetVolume((int)v);
+            });
+
+            _connectionMaintainer.Connection.On(MessagingConstants.ClientMessages.NEXT, () =>
+            {
+                _audioWorker.Next();
+            });
+
+            _connectionMaintainer.Connection.On(MessagingConstants.ClientMessages.PREV, () =>
+            {
+                _audioWorker.Prev();
+            });
         }
 
         private async Task OnTuneVolume(bool inc)

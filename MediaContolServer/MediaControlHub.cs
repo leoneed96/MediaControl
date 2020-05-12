@@ -1,4 +1,5 @@
-﻿using Messaging;
+﻿using MediaContolServer.Data;
+using Messaging;
 using Microsoft.AspNetCore.SignalR;
 using Newtonsoft.Json;
 using System;
@@ -11,10 +12,15 @@ namespace MediaContolServer
 {
     public class MediaControlHub: Hub
     {
+        private readonly MediaClientStorage _storage;
+        public MediaControlHub(MediaClientStorage storage)
+        {
+            _storage = storage;
+        }
         public async Task StateReceived(object data)
         {
-            var a = data as MediaState;
-            var aa = JsonConvert.DeserializeObject<MediaState>(data.ToString());
+            var state = JsonConvert.DeserializeObject<MediaState>(data.ToString());
+            _storage.UpdateOrAddClientState(state);
         }
     }
 }

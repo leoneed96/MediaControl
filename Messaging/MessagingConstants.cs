@@ -13,6 +13,8 @@ namespace Messaging
             public const string INC_VOLUME = "IncVolume";
             public const string DEC_VOLUME = "DecVolume";
             public const string SET_VOLUME = "SetVolume";
+            public const string NEXT = "Next";
+            public const string PREV = "Prev";
         }
 
         public static class ServerMessages

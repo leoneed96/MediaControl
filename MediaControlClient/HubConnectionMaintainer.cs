@@ -15,7 +15,7 @@ namespace MediaControl
         public HubConnectionMaintainer()
         {
             _connection = new HubConnectionBuilder()
-               .WithUrl("http://localhost:130/media")
+               .WithUrl("http://192.168.1.121:130/media")
                .Build();
 
             Task.Run(async () =>
