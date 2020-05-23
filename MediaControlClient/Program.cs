@@ -16,8 +16,8 @@ namespace MediaControl
         {
             var audioWorker = new AudioWorker();
             var worker = new ConnectionWorker(audioWorker);
-            Console.ReadKey();
-            //await connection.InvokeAsync("SendState", new { connection.ConnectionId });
+            while(true)
+                Console.ReadKey();
         }
     }
 }
